@@ -16,6 +16,8 @@ Better yet, if you download the file to a location that your browser trusts, an 
 When you hover over a group element in one group, the other group will be colored according to the appropriate
 Pontryagin dual character.
 
+
+
 ## Details
 
 
