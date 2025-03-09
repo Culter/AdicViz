@@ -24,7 +24,7 @@ one actually highlights an element of a _finite projection_ of the group,
 which turns into a coloring of a _finite subset_ of the Prüfer group.
 That's why, in the second screenshot, the outer elements of the Prüfer group remain gray.)
 
-## Details
+## Mathematical details
 The embedding of the _p_-adic integers into the plane is implemented in [Integers.cpp](https://github.com/Culter/AdicViz/blob/main/src/Integers.cpp).
 I use the solenoidal embedding,
 which is due to [van Dantzig (1930)](https://eudml.org/doc/212336) and appears sporadically in the dynamical systems literature later.
@@ -37,6 +37,10 @@ In order to contrast the discrete topology with the subset topology inherited fr
 Rather, each group element occupies a positive-area shape inside the unit disk, and to emphasize the discrete topology, we intentionally leave gaps between elements.
 Group elements with smaller denominators are larger.
 Geometrically, each shape is something like a wedge landing on the unit circle, with an appropriate radial distortion to ensure that several subgroups of the group are visible.
+
+## Code details
+This code was taken from an old build system that doesn't work anymore.
+If you want to compile it from scratch, beware that you'll probably need to change some things.
 
 ## See also
 * https://commons.wikimedia.org/wiki/File:2-adic_integers_with_dual_colorings.svg
