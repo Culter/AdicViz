@@ -7,6 +7,15 @@ The code produces SVGs with embedded scripting, which visualize side-by-side:
 The following is the output for _p_=3:
 ![3-adics](https://github.com/Culter/AdicViz/blob/main/Output/p3.svg)
 
+As embedded in this README file, that graphic is not very interactive.
+
+You can view the SVG file in raw form to get tooltips when you hover over group elements:
+https://raw.githubusercontent.com/Culter/AdicViz/refs/heads/main/Output/p3.svg
+
+Better yet, if you download the file to a location that your browser trusts, an interactive script will run.
+When you hover over a group element in one group, the other group will be colored according to the appropriate
+Pontryagin dual character.
+
 ## Details
 
 
