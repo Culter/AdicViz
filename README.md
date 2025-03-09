@@ -20,7 +20,10 @@ Pontryagin dual character.
 ![Highlighting 13+27Z in the 3-adic integers](highlight_13_plus_27Z.png)
 
 ## Details
-
+The embedding of the _p_-adic integers into the plane is implemented in [Integers.cpp](https://github.com/Culter/AdicViz/blob/main/src/Integers.cpp).
+I use the solenoidal embedding,
+which is due to van Dantzig (1930) and appears sporadically in the dynamical systems literature later.
+The best modern reference is TODO
 
 ## See also
 * https://commons.wikimedia.org/wiki/File:2-adic_integers_with_dual_colorings.svg
