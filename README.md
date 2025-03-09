@@ -4,7 +4,8 @@ The code produces SVGs with embedded scripting, which visualize side-by-side:
 2. The discrete [Prüfer _p_-group](https://en.wikipedia.org/wiki/Pr%C3%BCfer_group)
 
 ## Example output
-
+The following is the output for _p_=3:
+![3-adics](https://github.com/Culter/AdicViz/blob/main/Output/p3.svg)
 
 ## Details
 
