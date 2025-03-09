@@ -16,7 +16,8 @@ Better yet, if you download the file to a location that your browser trusts, an 
 When you hover over a group element in one group, the other group will be colored according to the appropriate
 Pontryagin dual character.
 
-
+![Highlighting 1/9 in the Prufer group](highlight_one_ninth.png)
+![Highlighting 13+27Z in the 3-adic integers](highlight_13_plus_27Z.png)
 
 ## Details
 
