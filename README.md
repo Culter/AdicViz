@@ -19,6 +19,11 @@ Pontryagin dual character.
 ![Highlighting 1/9 in the Prufer group](highlight_one_ninth.png)
 ![Highlighting 13+27Z in the 3-adic integers](highlight_13_plus_27Z.png)
 
+(More precisely, in the case of the _p_-adic integers, since each group element occupies zero area,
+one actually highlights an element of a _finite projection_ of the group,
+which turns into a coloring of a _finite subset_ of the Prüfer group.
+That's why, in the second screenshot, the outer elements of the Prüfer group remain gray.)
+
 ## Details
 The embedding of the _p_-adic integers into the plane is implemented in [Integers.cpp](https://github.com/Culter/AdicViz/blob/main/src/Integers.cpp).
 I use the solenoidal embedding,
