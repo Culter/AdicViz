@@ -43,6 +43,11 @@ This code was taken from an old build system that doesn't work anymore.
 If you want to compile it from scratch, beware that you'll probably need to change some things.
 
 ## See also
-* https://commons.wikimedia.org/wiki/File:2-adic_integers_with_dual_colorings.svg
-* https://commons.wikimedia.org/wiki/File:3-adic_integers_with_dual_colorings.svg
+* Images used in Wikipedia:
+  * https://commons.wikimedia.org/wiki/File:2-adic_integers_with_dual_colorings.svg
+  * https://commons.wikimedia.org/wiki/File:3-adic_integers_with_dual_colorings.svg
 * https://blogs.ams.org/visualinsight/2014/10/01/2-adic-integers/
+* Related StackExchange threads:
+  * https://math.stackexchange.com/questions/583609/p-adic-numbers-and-group-characters
+  * https://math.stackexchange.com/questions/2020194/if-h-subseteq-g-are-finite-abelian-groups-how-does-l2h-embed-into-l2
+  * https://math.stackexchange.com/questions/2436717/visualizing-textbfq-p-vs-textbff-pt
