@@ -1,0 +1,11 @@
+# Common build options
+common --enable_platform_specific_config
+
+# Per-platform configurations
+build:windows --cxxopt=/std:c++11
+build:linux --cxxopt=-std=c++11
+build:macos --cxxopt=-std=c++11
+
+# Clang-ish defaults for Unix
+build:linux --compiler=gcc
+build:macos --compiler=clang

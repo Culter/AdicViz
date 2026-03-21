@@ -42,9 +42,12 @@ Rather, each group element occupies a positive-area shape inside the unit disk, 
 Group elements with smaller denominators are larger.
 Geometrically, each shape is something like a wedge landing on the unit circle, with an appropriate radial distortion to ensure that several subgroups of the group are visible.
 
-## Code details
-This code was taken from an old build system that doesn't work anymore.
-If you want to compile it from scratch, beware that you'll probably need to change some things.
+## Building
+This project uses [Bazel](https://bazel.build/) as its build system.
+
+```bash
+bazel run //src:adicviz
+```
 
 ## See also
 * Images used in Wikipedia:
