@@ -20,6 +20,6 @@ void stylePrufer();
 void definePrufer();
 void drawPrufer(comp center, double scale);
 
-void drawPruferColored(comp center, double scale, int value, int power);
+void drawPruferColored(comp center, double scale, int value, int power, bool labelOnTop);
 
 #endif

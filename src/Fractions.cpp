@@ -296,7 +296,7 @@ void stylePrufer()
     cout << "}\n";
     
     cout << ".fracLabel {\n";
-    cout << "    font: 0.3px sans-serif;\n";
+    cout << "    font: 0.35px sans-serif;\n";
     // cout << "    fill: black;\n";
     cout << "}\n";
 }
@@ -439,7 +439,7 @@ void printFillValue(double angle, double lightness)
     cout << "fill=\"rgb(" << (int)r << "," << (int)g << "," << (int)b << ")\"";
 }
 
-void drawPruferColored(comp center, double scale, int colorValue, int colorPower)
+void drawPruferColored(comp center, double scale, int colorValue, int colorPower, bool labelOnTop)
 {
     int maxOrd = g_maxExponentFraction;
     
@@ -504,7 +504,11 @@ void drawPruferColored(comp center, double scale, int colorValue, int colorPower
             std::cout << "</g>\n";
         }
 
-        std::cout << "<text x=\"-1\" y=\"1.25\" class=\"fracLabel\">";
+        if (labelOnTop) {
+            std::cout << "<text x=\"-1\" y=\"-1.02\" class=\"fracLabel\">";
+        } else {
+            std::cout << "<text x=\"-1\" y=\"1.27\" class=\"fracLabel\">";
+        }
         std::cout << "…";
         printAdicTitleStyled(colorValue, 8);
         std::cout << "</text>\n";

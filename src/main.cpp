@@ -42,7 +42,12 @@ void drawLine(comp integerCenter, comp fractionCenter, comp offset, double integ
 void drawLineWithColor(comp integerCenter, comp fractionCenter, comp offset, double integerScale, double fractionScale, int integerValue, int integerExponent)
 {
     drawLine(integerCenter, fractionCenter, offset, integerScale, fractionScale, integerValue, integerExponent);
-    drawPruferColored(fractionCenter, fractionScale, integerValue, g_maxExponentFraction);
+    
+    comp integer = getPoint(integerCenter, integerScale, integerValue, integerExponent);
+    comp dz = fractionCenter - integer;
+    bool labelOnTop = dz.getim() < -abs(dz.getre() / 2);
+
+    drawPruferColored(fractionCenter, fractionScale, integerValue, g_maxExponentFraction, labelOnTop);
 }
 
 int main (int argc, const char * argv[])
@@ -90,6 +95,8 @@ int main (int argc, const char * argv[])
         
         comp center(300, 300);
         double integerScale = 180 * (1.0 - g_scale);
+        double fractionSize = 44;
+        double fractionDistance = 245;
         
         //2
         /*
@@ -116,25 +123,25 @@ int main (int argc, const char * argv[])
         
         //3
         
-        drawLineWithColor(center, center + circ( 6.0/13.0) * 240, comp(0, 0), integerScale, 50, -(powi(3, 10) - 1) / 4, 9);
-        drawLineWithColor(center, center + circ(-6.0/13.0) * 240, comp(0, 0), integerScale, 50,  (powi(3, 10) - 1) / 4, 9);
+        drawLineWithColor(center, center + circ( 6.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -(powi(3, 10) - 1) / 4, 9);
+        drawLineWithColor(center, center + circ(-6.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  (powi(3, 10) - 1) / 4, 9);
         
-        drawLineWithColor(center, center + circ( 5.0/13.0) * 240, comp(0, 0), integerScale, 50,  (powi(3, 10) - 1) / 2, 9);
-        drawLineWithColor(center, center + circ(-5.0/13.0) * 240, comp(0, 0), integerScale, 50, -(powi(3, 10) - 1) / 2, 9);
+        drawLineWithColor(center, center + circ( 5.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  (powi(3, 10) - 1) / 2, 9);
+        drawLineWithColor(center, center + circ(-5.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -(powi(3, 10) - 1) / 2, 9);
         
-        drawLineWithColor(center, center + circ( 4.0/13.0) * 240, comp(0, 0), integerScale, 50,  (powi(3, 10) - 1) / 8, 9);
-        drawLineWithColor(center, center + circ(-4.0/13.0) * 240, comp(0, 0), integerScale, 50, -(powi(3, 10) - 1) / 8, 9);
+        drawLineWithColor(center, center + circ( 4.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  (powi(3, 10) - 1) / 8, 9);
+        drawLineWithColor(center, center + circ(-4.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -(powi(3, 10) - 1) / 8, 9);
         
-        drawLineWithColor(center, center + circ( 3.0/13.0) * 240, comp(0, 0), integerScale, 50,  1, 10);
-        drawLineWithColor(center, center + circ(-3.0/13.0) * 240, comp(0, 0), integerScale, 50, -1, 10);
+        drawLineWithColor(center, center + circ( 3.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  1, 10);
+        drawLineWithColor(center, center + circ(-3.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -1, 10);
         
-        drawLineWithColor(center, center + circ( 2.0/13.0) * 240, comp(0, 0), integerScale, 50,  3, 10);
-        drawLineWithColor(center, center + circ(-2.0/13.0) * 240, comp(0, 0), integerScale, 50, -3, 10);
+        drawLineWithColor(center, center + circ( 2.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  3, 10);
+        drawLineWithColor(center, center + circ(-2.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -3, 10);
         
-        drawLineWithColor(center, center + circ( 1.0/13.0) * 240, comp(0, 0), integerScale, 50,  9, 10);
-        drawLineWithColor(center, center + circ(-1.0/13.0) * 240, comp(0, 0), integerScale, 50, -9, 10);
+        drawLineWithColor(center, center + circ( 1.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  9, 10);
+        drawLineWithColor(center, center + circ(-1.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -9, 10);
         
-        drawLineWithColor(center, center + circ(0.0) * 240, comp(0, 0), integerScale, 50, 0, 10);
+        drawLineWithColor(center, center + circ(0.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, 0, 10);
         
         drawIntegers(center, integerScale);
         
