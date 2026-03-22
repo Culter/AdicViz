@@ -298,6 +298,9 @@ void stylePrufer()
     cout << ".fracLabel {\n";
     cout << "    font: 0.35px sans-serif;\n";
     // cout << "    fill: black;\n";
+    cout << "    stroke: white;\n";
+    cout << "    stroke-width: 0.05px;\n";
+    cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
 }
 
@@ -459,6 +462,15 @@ void drawPruferColored(comp center, double scale, int colorValue, int colorPower
     
     {
         indent inFractions;
+
+        if (labelOnTop) {
+            std::cout << "<text x=\"-1\" y=\"-1.02\" class=\"fracLabel\">";
+        } else {
+            std::cout << "<text x=\"-1\" y=\"1.27\" class=\"fracLabel\">";
+        }
+        std::cout << "…";
+        printAdicTitleStyled(colorValue, 8);
+        std::cout << "</text>\n";
         
         double limitR = (1.0 - rCurve(maxOrd + 1)) / 2;
         
@@ -503,15 +515,6 @@ void drawPruferColored(comp center, double scale, int colorValue, int colorPower
             indent::space();
             std::cout << "</g>\n";
         }
-
-        if (labelOnTop) {
-            std::cout << "<text x=\"-1\" y=\"-1.02\" class=\"fracLabel\">";
-        } else {
-            std::cout << "<text x=\"-1\" y=\"1.27\" class=\"fracLabel\">";
-        }
-        std::cout << "…";
-        printAdicTitleStyled(colorValue, 8);
-        std::cout << "</text>\n";
     }
     
     //End transform
