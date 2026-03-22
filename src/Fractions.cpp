@@ -21,6 +21,7 @@ double g_curvePower = 2.5; //p=3
 
 void drawPruferVisiblePath(int power, int maxDetail);
 void drawPruferBackgroundPath(int power, int maxDetail);
+void printFillValue(double angle, double lightness);
 
 double rCurve(double i)
 {
@@ -82,6 +83,31 @@ void printPrufer(int value, int power)
     {
         int mod = powi(prime, i);
         std::cout << (value / mod) % prime;
+    }
+}
+
+void printAdicTitleStyled(int value, int power)
+{
+    int max = powi(prime, power);
+    while (value < 0) {
+        // To get consistent rounding
+        value += max;
+    }
+
+    for (int i = power - 1; i >= 0; --i)
+    {
+        std::cout << "<tspan ";
+        int next_mod = powi(prime, i + 1);
+        double angle = ((double)value) / next_mod;
+        printFillValue(angle, 170.0);
+        std::cout << ">";
+
+        int mod = powi(prime, i);
+        int residue = (((value + mod) / mod) - 1) % prime;
+        residue = (residue + prime) % prime;
+        std::cout << residue;
+        
+        std::cout << "</tspan>";
     }
 }
 
@@ -268,6 +294,11 @@ void stylePrufer()
     
     cout << "    stroke-width: 0.01;\n";
     cout << "}\n";
+    
+    cout << ".fracLabel {\n";
+    cout << "    font: 0.3px sans-serif;\n";
+    // cout << "    fill: black;\n";
+    cout << "}\n";
 }
 
 void definePrufer()
@@ -361,7 +392,7 @@ void drawPrufer(comp center, double scale)
     std::cout << "</g>\n";
 }
 
-void printFillValue(double angle)
+void printFillValue(double angle, double lightness)
 {
     double r = 0;
     double g = 0;
@@ -401,9 +432,9 @@ void printFillValue(double angle)
         r = sqrt(r);
     }
     
-    r *= 256;
-    g *= 256;
-    b *= 256;
+    r *= lightness;
+    g *= lightness;
+    b *= lightness;
     
     cout << "fill=\"rgb(" << (int)r << "," << (int)g << "," << (int)b << ")\"";
 }
@@ -460,7 +491,7 @@ void drawPruferColored(comp center, double scale, int colorValue, int colorPower
                     
                     //Color!
                     double colorFraction = ((double)d / max) * colorValue;
-                    printFillValue(colorFraction);
+                    printFillValue(colorFraction, 256.0);
                     
                     cout << "><title>";
                     printPrufer(d, power);
@@ -472,6 +503,11 @@ void drawPruferColored(comp center, double scale, int colorValue, int colorPower
             indent::space();
             std::cout << "</g>\n";
         }
+
+        std::cout << "<text x=\"-1\" y=\"1.25\" class=\"fracLabel\">";
+        std::cout << "…";
+        printAdicTitleStyled(colorValue, 8);
+        std::cout << "</text>\n";
     }
     
     //End transform
