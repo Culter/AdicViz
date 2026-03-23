@@ -16,6 +16,7 @@ comp comp::operator+ (const comp & p) const { return comp (re+p.re, im+p.im); }
 comp comp::operator- (const comp & p) const { return comp (re-p.re, im-p.im); }
 comp comp::operator* (const comp & p) const { return comp (re*p.re - im*p.im, re*p.im + im*p.re); }
 comp comp::operator* (double m) const { return comp (re*m, im*m); }
+comp comp::operator/ (double m) const { return comp (re/m, im/m); }
 comp comp::operator+= (const comp & p) { return (*this = *this + p); }
 comp comp::operator-= (const comp & p) { return (*this = *this - p); }
 comp comp::operator*= (double m) { return (*this = *this * m); }

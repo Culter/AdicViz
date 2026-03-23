@@ -26,6 +26,7 @@ public:
     comp operator- (const comp & p) const;
     comp operator* (const comp & p) const;
     comp operator* (double m) const;
+    comp operator/ (double m) const;
     comp operator+= (const comp & p);
     comp operator-= (const comp & p);
     comp operator*= (double m);

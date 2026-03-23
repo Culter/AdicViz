@@ -43,6 +43,33 @@ void styleIntegers()
         cout << "    cursor: crosshair;\n";
     }
     cout << "}\n";
+    
+    cout << ".integerLabel {\n";
+    cout << "    font: 28px sans-serif;\n";
+    cout << "    text-anchor: middle;\n";
+    cout << "    dominant-baseline: middle;\n";
+    cout << "    stroke: white;\n";
+    cout << "    stroke-width: 4px;\n";
+    cout << "    paint-order: stroke fill;\n";
+    cout << "}\n";
+    
+    cout << ".smallLabelRight {\n";
+    cout << "    font: 14px sans-serif;\n";
+    cout << "    text-anchor: start;\n";
+    cout << "    dominant-baseline: middle;\n";
+    cout << "    stroke: white;\n";
+    cout << "    stroke-width: 2px;\n";
+    cout << "    paint-order: stroke fill;\n";
+    cout << "}\n";
+    
+    cout << ".smallLabelLeft {\n";
+    cout << "    font: 14px sans-serif;\n";
+    cout << "    text-anchor: end;\n";
+    cout << "    dominant-baseline: middle;\n";
+    cout << "    stroke: white;\n";
+    cout << "    stroke-width: 2px;\n";
+    cout << "    paint-order: stroke fill;\n";
+    cout << "}\n";
 }
 
 void printAdicTitle(int value, int power)

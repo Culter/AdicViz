@@ -39,13 +39,34 @@ void drawLine(comp integerCenter, comp fractionCenter, comp offset, double integ
     cout << "\" />\n";
 }
 
-void drawLineWithColor(comp integerCenter, comp fractionCenter, comp offset, double integerScale, double fractionScale, int integerValue, int integerExponent)
+void drawLabel(comp integerCenter, double integerScale, int integerValue, string name, double dx, string styleClass) {
+    comp integer = getPoint(integerCenter, integerScale, integerValue, g_maxExponentInteger);
+    
+    std::cout << "<text x=\"" << integer.getre() + dx << "\" y=\"" << integer.getim() << "\" class=\"" << styleClass << "\">";
+    std::cout << name;
+    std::cout << "</text>\n";
+}
+
+void drawLabelAtPoint(comp point, string name) {    
+    std::cout << "<text x=\"" << point.getre() << "\" y=\"" << point.getim() << "\" class=\"integerLabel\">";
+    std::cout << name;
+    std::cout << "</text>\n";
+}
+
+void drawLineWithColor(comp integerCenter, comp fractionCenter, comp offset, double integerScale, double fractionScale, int integerValue, int integerExponent, string name)
 {
     drawLine(integerCenter, fractionCenter, offset, integerScale, fractionScale, integerValue, integerExponent);
     
     comp integer = getPoint(integerCenter, integerScale, integerValue, integerExponent);
     comp dz = fractionCenter - integer;
     bool labelOnTop = dz.getim() < -abs(dz.getre() / 2);
+
+    comp integerToFractionCenter = fractionCenter - integer;
+    comp direction = integerToFractionCenter / integerToFractionCenter.norm();
+    double lengthToPerimeter = integerToFractionCenter.norm() - fractionScale;
+    double lengthToName = lengthToPerimeter * 0.55;
+    comp nameCenter = integer + (direction * lengthToName);
+    drawLabelAtPoint(nameCenter, name);
 
     drawPruferColored(fractionCenter, fractionScale, integerValue, g_maxExponentFraction, labelOnTop);
 }
@@ -95,8 +116,8 @@ int main (int argc, const char * argv[])
         
         comp center(300, 300);
         double integerScale = 180 * (1.0 - g_scale);
-        double fractionSize = 44;
-        double fractionDistance = 245;
+        double fractionSize = 42;
+        double fractionDistance = 244;
         
         //2
         /*
@@ -123,28 +144,41 @@ int main (int argc, const char * argv[])
         
         //3
         
-        drawLineWithColor(center, center + circ( 6.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -(powi(3, 10) - 1) / 4, 9);
-        drawLineWithColor(center, center + circ(-6.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  (powi(3, 10) - 1) / 4, 9);
+        drawLineWithColor(center, center + circ( 6.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -(powi(3, 10) - 1) / 4, 9, "1⁄4");
+        drawLineWithColor(center, center + circ(-6.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  (powi(3, 10) - 1) / 4, 9, "−1⁄4");
         
-        drawLineWithColor(center, center + circ( 5.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  (powi(3, 10) - 1) / 2, 9);
-        drawLineWithColor(center, center + circ(-5.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -(powi(3, 10) - 1) / 2, 9);
+        drawLineWithColor(center, center + circ( 5.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  (powi(3, 10) - 1) / 2, 9, "−1⁄2");
+        drawLineWithColor(center, center + circ(-5.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -(powi(3, 10) - 1) / 2, 9, "1⁄2");
         
-        drawLineWithColor(center, center + circ( 4.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  (powi(3, 10) - 1) / 8, 9);
-        drawLineWithColor(center, center + circ(-4.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -(powi(3, 10) - 1) / 8, 9);
+        drawLineWithColor(center, center + circ( 4.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  (powi(3, 10) - 1) / 8, 9, "−1⁄8");
+        drawLineWithColor(center, center + circ(-4.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -(powi(3, 10) - 1) / 8, 9, "1⁄8");
         
-        drawLineWithColor(center, center + circ( 3.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  1, 10);
-        drawLineWithColor(center, center + circ(-3.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -1, 10);
+        drawLineWithColor(center, center + circ( 3.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  1, 10, "1");
+        drawLineWithColor(center, center + circ(-3.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -1, 10, "−1");
         
-        drawLineWithColor(center, center + circ( 2.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  3, 10);
-        drawLineWithColor(center, center + circ(-2.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -3, 10);
+        drawLineWithColor(center, center + circ( 2.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  3, 10, "3");
+        drawLineWithColor(center, center + circ(-2.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -3, 10, "−3");
         
-        drawLineWithColor(center, center + circ( 1.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  9, 10);
-        drawLineWithColor(center, center + circ(-1.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -9, 10);
+        drawLineWithColor(center, center + circ( 1.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  9, 10, "9");
+        drawLineWithColor(center, center + circ(-1.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -9, 10, "−9");
         
-        drawLineWithColor(center, center + circ(0.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, 0, 10);
+        drawLineWithColor(center, center + circ(0.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, 0, 10, "0");
         
         drawIntegers(center, integerScale);
         
+        drawLabel(center, integerScale, 2, "2", 3.0, "smallLabelRight");
+        drawLabel(center, integerScale, -2, "−2", 3.0, "smallLabelRight");
+        drawLabel(center, integerScale, 4, "4", 3.0, "smallLabelRight");
+        drawLabel(center, integerScale, -4, "−4", 3.0, "smallLabelRight");
+        drawLabel(center, integerScale, 6, "6", 3.0, "smallLabelRight");
+        drawLabel(center, integerScale, -6, "−6", 3.0, "smallLabelRight");
+        drawLabel(center, integerScale, 8, "8", 3.0, "smallLabelRight");
+        drawLabel(center, integerScale, -8, "−8", 3.0, "smallLabelRight");
+        
+        drawLabel(center, integerScale, -((powi(3, 10) - 1) / 2) * 3, "3⁄2", -3.0, "smallLabelLeft");
+        drawLabel(center, integerScale, ((powi(3, 10) - 1) / 2) * 3, "−3⁄2", -3.0, "smallLabelLeft");
+        drawLabel(center, integerScale, -((powi(3, 10) - 1) / 2) * 5, "5⁄2", -3.0, "smallLabelLeft");
+        drawLabel(center, integerScale, ((powi(3, 10) - 1) / 2) * 5, "−5⁄2", -3.0, "smallLabelLeft");
     }
     
 	postamble();
