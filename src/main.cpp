@@ -172,6 +172,8 @@ int main (int argc, const char * argv[])
         drawLabel(center, integerScale, -4, "−4", 3.0, "smallLabelRight");
         drawLabel(center, integerScale, 6, "6", 3.0, "smallLabelRight");
         drawLabel(center, integerScale, -6, "−6", 3.0, "smallLabelRight");
+        drawLabel(center, integerScale, 7, "7", 3.0, "smallLabelRight");
+        drawLabel(center, integerScale, -7, "−7", 3.0, "smallLabelRight");
         drawLabel(center, integerScale, 8, "8", 3.0, "smallLabelRight");
         drawLabel(center, integerScale, -8, "−8", 3.0, "smallLabelRight");
         
@@ -179,6 +181,8 @@ int main (int argc, const char * argv[])
         drawLabel(center, integerScale, ((powi(3, 10) - 1) / 2) * 3, "−3⁄2", -3.0, "smallLabelLeft");
         drawLabel(center, integerScale, -((powi(3, 10) - 1) / 2) * 5, "5⁄2", -3.0, "smallLabelLeft");
         drawLabel(center, integerScale, ((powi(3, 10) - 1) / 2) * 5, "−5⁄2", -3.0, "smallLabelLeft");
+        // drawLabel(center, integerScale, -((powi(3, 10) - 1) / 2) * 15, "15⁄2", -3.0, "smallLabelLeft");
+        // drawLabel(center, integerScale, ((powi(3, 10) - 1) / 2) * 15, "−15⁄2", -3.0, "smallLabelLeft");
     }
     
 	postamble();
