@@ -49,7 +49,7 @@ void styleIntegers()
     cout << "    text-anchor: middle;\n";
     cout << "    dominant-baseline: middle;\n";
     cout << "    stroke: white;\n";
-    cout << "    stroke-width: 4px;\n";
+    cout << "    stroke-width: 3px;\n";
     cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
     
@@ -58,7 +58,7 @@ void styleIntegers()
     cout << "    text-anchor: start;\n";
     cout << "    dominant-baseline: middle;\n";
     cout << "    stroke: white;\n";
-    cout << "    stroke-width: 2px;\n";
+    cout << "    stroke-width: 1.5px;\n";
     cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
     
@@ -67,7 +67,7 @@ void styleIntegers()
     cout << "    text-anchor: end;\n";
     cout << "    dominant-baseline: middle;\n";
     cout << "    stroke: white;\n";
-    cout << "    stroke-width: 2px;\n";
+    cout << "    stroke-width: 1.5px;\n";
     cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
 }

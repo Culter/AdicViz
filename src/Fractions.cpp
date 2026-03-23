@@ -299,7 +299,7 @@ void stylePrufer()
     cout << "    font: 0.45px sans-serif;\n";
     // cout << "    fill: black;\n";
     cout << "    stroke: white;\n";
-    cout << "    stroke-width: 0.07px;\n";
+    cout << "    stroke-width: 0.06px;\n";
     cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
 }

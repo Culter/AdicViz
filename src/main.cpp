@@ -144,6 +144,8 @@ int main (int argc, const char * argv[])
         
         //3
         
+        drawIntegers(center, integerScale);
+
         drawLineWithColor(center, center + circ( 6.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -(powi(3, 10) - 1) / 4, 9, "1⁄4");
         drawLineWithColor(center, center + circ(-6.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize,  (powi(3, 10) - 1) / 4, 9, "−1⁄4");
         
@@ -163,8 +165,6 @@ int main (int argc, const char * argv[])
         drawLineWithColor(center, center + circ(-1.0/13.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, -9, 10, "−9");
         
         drawLineWithColor(center, center + circ(0.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, 0, 10, "0");
-        
-        drawIntegers(center, integerScale);
         
         drawLabel(center, integerScale, 2, "2", 3.0, "smallLabelRight");
         drawLabel(center, integerScale, -2, "−2", 3.0, "smallLabelRight");
