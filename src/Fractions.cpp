@@ -296,7 +296,9 @@ void stylePrufer()
     cout << "}\n";
     
     cout << ".fracLabel {\n";
-    cout << "    font: 0.45px sans-serif;\n";
+    // cout << "    font: 0.45px sans-serif;\n";
+    cout << "    font-family: \"Noto Serif\", serif;\n";
+    cout << "    font-size: 0.45px;\n";
     // cout << "    fill: black;\n";
     cout << "    stroke: white;\n";
     cout << "    stroke-width: 0.06px;\n";

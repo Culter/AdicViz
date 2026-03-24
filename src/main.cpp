@@ -172,23 +172,25 @@ int main (int argc, const char * argv[])
         
         drawLineWithColor(center, center + circ(0.0) * fractionDistance, comp(0, 0), integerScale, fractionSize, 0, 10, "0");
         
-        drawLabel(center, integerScale, 2, "2", 3.0, "smallLabelRight");
-        drawLabel(center, integerScale, -2, "−2", 3.0, "smallLabelRight");
-        drawLabel(center, integerScale, 4, "4", 3.0, "smallLabelRight");
-        drawLabel(center, integerScale, -4, "−4", 3.0, "smallLabelRight");
-        drawLabel(center, integerScale, 6, "6", 3.0, "smallLabelRight");
-        drawLabel(center, integerScale, -6, "−6", 3.0, "smallLabelRight");
-        drawLabel(center, integerScale, 7, "7", 3.0, "smallLabelRight");
-        drawLabel(center, integerScale, -7, "−7", 3.0, "smallLabelRight");
-        drawLabel(center, integerScale, 8, "8", 3.0, "smallLabelRight");
-        drawLabel(center, integerScale, -8, "−8", 3.0, "smallLabelRight");
+        const double dx = 2.0;
+
+        drawLabel(center, integerScale, 2, "2", dx, "smallLabelRight");
+        drawLabel(center, integerScale, -2, "−2", dx, "smallLabelRight");
+        drawLabel(center, integerScale, 4, "4", dx, "smallLabelRight");
+        drawLabel(center, integerScale, -4, "−4", dx, "smallLabelRight");
+        drawLabel(center, integerScale, 6, "6", dx, "smallLabelRight");
+        drawLabel(center, integerScale, -6, "−6", dx, "smallLabelRight");
+        drawLabel(center, integerScale, 7, "7", dx, "smallLabelRight");
+        drawLabel(center, integerScale, -7, "−7", dx, "smallLabelRight");
+        drawLabel(center, integerScale, 8, "8", dx, "smallLabelRight");
+        drawLabel(center, integerScale, -8, "−8", dx, "smallLabelRight");
         
-        drawLabel(center, integerScale, -((powi(3, 10) - 1) / 2) * 3, "3⁄2", -3.0, "smallLabelLeft");
-        drawLabel(center, integerScale, ((powi(3, 10) - 1) / 2) * 3, "−3⁄2", -3.0, "smallLabelLeft");
-        drawLabel(center, integerScale, -((powi(3, 10) - 1) / 2) * 5, "5⁄2", -3.0, "smallLabelLeft");
-        drawLabel(center, integerScale, ((powi(3, 10) - 1) / 2) * 5, "−5⁄2", -3.0, "smallLabelLeft");
-        // drawLabel(center, integerScale, -((powi(3, 10) - 1) / 2) * 15, "15⁄2", -3.0, "smallLabelLeft");
-        // drawLabel(center, integerScale, ((powi(3, 10) - 1) / 2) * 15, "−15⁄2", -3.0, "smallLabelLeft");
+        drawLabel(center, integerScale, -((powi(3, 10) - 1) / 2) * 3, "3⁄2", -dx, "smallLabelLeft");
+        drawLabel(center, integerScale, ((powi(3, 10) - 1) / 2) * 3, "−3⁄2", -dx, "smallLabelLeft");
+        drawLabel(center, integerScale, -((powi(3, 10) - 1) / 2) * 5, "5⁄2", -dx, "smallLabelLeft");
+        drawLabel(center, integerScale, ((powi(3, 10) - 1) / 2) * 5, "−5⁄2", -dx, "smallLabelLeft");
+        // drawLabel(center, integerScale, -((powi(3, 10) - 1) / 2) * 15, "15⁄2", -dx, "smallLabelLeft");
+        // drawLabel(center, integerScale, ((powi(3, 10) - 1) / 2) * 15, "−15⁄2", -dx, "smallLabelLeft");
     }
     
 	postamble();

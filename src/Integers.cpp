@@ -45,24 +45,33 @@ void styleIntegers()
     cout << "}\n";
     
     cout << ".integerLabel {\n";
-    cout << "    font: 28px sans-serif;\n";
+    cout << "    font-family: \"Noto Serif\", serif;\n";
+    cout << "    font-size: 28px;\n";
+
     cout << "    text-anchor: middle;\n";
+    
     cout << "    stroke: white;\n";
     cout << "    stroke-width: 3px;\n";
     cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
     
     cout << ".smallLabelRight {\n";
-    cout << "    font: 14px sans-serif;\n";
+    cout << "    font-family: \"Noto Serif\", serif;\n";
+    cout << "    font-size: 14px;\n";
+
     cout << "    text-anchor: start;\n";
+
     cout << "    stroke: white;\n";
     cout << "    stroke-width: 1.5px;\n";
     cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
     
     cout << ".smallLabelLeft {\n";
-    cout << "    font: 14px sans-serif;\n";
+    cout << "    font-family: \"Noto Serif\", serif;\n";
+    cout << "    font-size: 14px;\n";
+
     cout << "    text-anchor: end;\n";
+
     cout << "    stroke: white;\n";
     cout << "    stroke-width: 1.5px;\n";
     cout << "    paint-order: stroke fill;\n";
