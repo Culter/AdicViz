@@ -295,14 +295,16 @@ void stylePrufer()
     cout << "}\n";
     
     cout << ".fracLabel {\n";
-    // cout << "    font: 0.45px sans-serif;\n";
     cout << "    font-family: \"Noto Serif\", serif;\n";
-    cout << "    font-size: 0.45px;\n";
+    cout << "    font-size: 18px;\n";
     // cout << "    fill: black;\n";
+
+    cout << "    text-anchor: middle;\n";
+
     cout << "    stroke: white;\n";
     cout << "    stroke-linecap: round;\n";
     cout << "    stroke-linejoin: round;\n";
-    cout << "    stroke-width: 0.06px;\n";
+    cout << "    stroke-width: 2px;\n";
     cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
 }
@@ -449,6 +451,17 @@ void drawPruferColored(comp center, double scale, int colorValue, int colorPower
 {
     int maxOrd = g_maxExponentFraction;
     
+    // The decimal label has to go outside the <g transform>,
+    // because otherwise librsvg would accumulate huge rounding errors when scaling the text up from 0.45px.
+    if (labelOnTop) {
+        std::cout << "<text x=\"" << center.getre() << "\" y=\"" << center.getim() - scale * 1.02 << "\" class=\"fracLabel\">";
+    } else {
+        std::cout << "<text x=\"" << center.getre() << "\" y=\"" << center.getim() + scale * 1.35 << "\" class=\"fracLabel\">";
+    }
+    std::cout << "…";
+    printAdicTitleStyled(colorValue, 6);
+    std::cout << "</text>\n";
+
     //Begin transform
     std::cout << "<g id=\"FractionRoot_" << colorValue << "_" << colorPower << "\" "
     << "transform=\""
@@ -465,15 +478,6 @@ void drawPruferColored(comp center, double scale, int colorValue, int colorPower
     
     {
         indent inFractions;
-
-        if (labelOnTop) {
-            std::cout << "<text x=\"-1.1\" y=\"-1.02\" class=\"fracLabel\">";
-        } else {
-            std::cout << "<text x=\"-1.1\" y=\"1.35\" class=\"fracLabel\">";
-        }
-        std::cout << "…";
-        printAdicTitleStyled(colorValue, 6);
-        std::cout << "</text>\n";
         
         double limitR = (1.0 - rCurve(maxOrd + 1)) / 2;
         

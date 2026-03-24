@@ -70,7 +70,7 @@ void drawLineWithColor(comp integerCenter, comp fractionCenter, comp offset, dou
     comp integerToFractionCenter = fractionCenter - integer;
     comp direction = integerToFractionCenter / integerToFractionCenter.norm();
     double lengthToPerimeter = integerToFractionCenter.norm() - fractionScale;
-    double lengthToName = lengthToPerimeter * 0.55;
+    double lengthToName = lengthToPerimeter * 0.6;
     comp nameCenter = integer + (direction * lengthToName);
     drawLabelAtPoint(nameCenter, name);
 
