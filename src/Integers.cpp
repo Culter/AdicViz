@@ -46,7 +46,7 @@ void styleIntegers()
     
     cout << ".integerLabel {\n";
     cout << "    font-family: \"Noto Serif\", serif;\n";
-    cout << "    font-size: 28px;\n";
+    cout << "    font-size: 30px;\n";
 
     cout << "    text-anchor: middle;\n";
 

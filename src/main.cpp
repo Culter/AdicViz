@@ -52,7 +52,7 @@ void drawLabel(comp integerCenter, double integerScale, int integerValue, string
 
 void drawLabelAtPoint(comp point, string name) {    
     double x = point.getre();
-    double y = point.getim() + 10.0;
+    double y = point.getim() + 10.5;
 
     std::cout << "<text x=\"" << x << "\" y=\"" << y << "\" class=\"integerLabel\">";
     std::cout << name;
@@ -122,8 +122,8 @@ int main (int argc, const char * argv[])
         
         comp center(300, 300);
         double integerScale = 180 * (1.0 - g_scale);
-        double fractionSize = 42;
-        double fractionDistance = 244;
+        double fractionSize = 40;
+        double fractionDistance = 246;
         
         //2
         /*

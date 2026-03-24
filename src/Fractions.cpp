@@ -21,7 +21,6 @@ double g_curvePower = 2.5; //p=3
 
 void drawPruferVisiblePath(int power, int maxDetail);
 void drawPruferBackgroundPath(int power, int maxDetail);
-void printFillValue(double angle, double lightness);
 
 double rCurve(double i)
 {

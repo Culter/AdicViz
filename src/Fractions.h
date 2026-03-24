@@ -14,6 +14,7 @@ double rCurvePrime(double i);
 comp pruferCurve(double fraction, double t, double halfWidth);
 comp pruferDerivative(double fraction, double t, double halfWidth);
 
+void printFillValue(double angle, double lightness);
 void printPrufer(int value, int power);
 
 void stylePrufer();
