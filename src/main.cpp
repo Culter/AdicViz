@@ -42,13 +42,19 @@ void drawLine(comp integerCenter, comp fractionCenter, comp offset, double integ
 void drawLabel(comp integerCenter, double integerScale, int integerValue, string name, double dx, string styleClass) {
     comp integer = getPoint(integerCenter, integerScale, integerValue, g_maxExponentInteger);
     
-    std::cout << "<text x=\"" << integer.getre() + dx << "\" y=\"" << integer.getim() << "\" class=\"" << styleClass << "\">";
+    double x = integer.getre() + dx;
+    double y = integer.getim() + 5.0;
+
+    std::cout << "<text x=\"" << x << "\" y=\"" << y << "\" class=\"" << styleClass << "\">";
     std::cout << name;
     std::cout << "</text>\n";
 }
 
 void drawLabelAtPoint(comp point, string name) {    
-    std::cout << "<text x=\"" << point.getre() << "\" y=\"" << point.getim() << "\" class=\"integerLabel\">";
+    double x = point.getre();
+    double y = point.getim() + 10.0;
+
+    std::cout << "<text x=\"" << x << "\" y=\"" << y << "\" class=\"integerLabel\">";
     std::cout << name;
     std::cout << "</text>\n";
 }

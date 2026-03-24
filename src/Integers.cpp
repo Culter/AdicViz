@@ -47,7 +47,6 @@ void styleIntegers()
     cout << ".integerLabel {\n";
     cout << "    font: 28px sans-serif;\n";
     cout << "    text-anchor: middle;\n";
-    cout << "    dominant-baseline: middle;\n";
     cout << "    stroke: white;\n";
     cout << "    stroke-width: 3px;\n";
     cout << "    paint-order: stroke fill;\n";
@@ -56,7 +55,6 @@ void styleIntegers()
     cout << ".smallLabelRight {\n";
     cout << "    font: 14px sans-serif;\n";
     cout << "    text-anchor: start;\n";
-    cout << "    dominant-baseline: middle;\n";
     cout << "    stroke: white;\n";
     cout << "    stroke-width: 1.5px;\n";
     cout << "    paint-order: stroke fill;\n";
@@ -65,7 +63,6 @@ void styleIntegers()
     cout << ".smallLabelLeft {\n";
     cout << "    font: 14px sans-serif;\n";
     cout << "    text-anchor: end;\n";
-    cout << "    dominant-baseline: middle;\n";
     cout << "    stroke: white;\n";
     cout << "    stroke-width: 1.5px;\n";
     cout << "    paint-order: stroke fill;\n";
