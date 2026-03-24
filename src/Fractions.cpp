@@ -301,6 +301,8 @@ void stylePrufer()
     cout << "    font-size: 0.45px;\n";
     // cout << "    fill: black;\n";
     cout << "    stroke: white;\n";
+    cout << "    stroke-linecap: round;\n";
+    cout << "    stroke-linejoin: round;\n";
     cout << "    stroke-width: 0.06px;\n";
     cout << "    paint-order: stroke fill;\n";
     cout << "}\n";

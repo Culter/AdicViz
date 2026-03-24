@@ -49,8 +49,10 @@ void styleIntegers()
     cout << "    font-size: 28px;\n";
 
     cout << "    text-anchor: middle;\n";
-    
+
     cout << "    stroke: white;\n";
+    cout << "    stroke-linecap: round;\n";
+    cout << "    stroke-linejoin: round;\n";
     cout << "    stroke-width: 3px;\n";
     cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
@@ -62,6 +64,8 @@ void styleIntegers()
     cout << "    text-anchor: start;\n";
 
     cout << "    stroke: white;\n";
+    cout << "    stroke-linecap: round;\n";
+    cout << "    stroke-linejoin: round;\n";
     cout << "    stroke-width: 1.5px;\n";
     cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
@@ -73,6 +77,8 @@ void styleIntegers()
     cout << "    text-anchor: end;\n";
 
     cout << "    stroke: white;\n";
+    cout << "    stroke-linecap: round;\n";
+    cout << "    stroke-linejoin: round;\n";
     cout << "    stroke-width: 1.5px;\n";
     cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
