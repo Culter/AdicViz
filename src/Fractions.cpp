@@ -98,7 +98,7 @@ void printAdicTitleStyled(int value, int power)
         std::cout << "<tspan ";
         int next_mod = powi(prime, i + 1);
         double angle = ((double)value) / next_mod;
-        printFillValue(angle, 170.0);
+        printFillValue(angle, 120.0);
         std::cout << ">";
 
         int mod = powi(prime, i);
