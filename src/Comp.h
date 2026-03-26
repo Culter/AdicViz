@@ -15,7 +15,7 @@
 #define pi 3.14159265359
 #endif
 
-#define prime 3
+#define prime 2
 
 class comp {
 public:

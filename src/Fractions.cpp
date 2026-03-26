@@ -16,8 +16,7 @@
 
 using namespace std;
 
-double g_curvePower = 2.5; //p=3
-//double g_curvePower = 4.0; //p=2
+double g_curvePower = (prime == 2) ? 4.0 : 2.5;
 
 void drawPruferVisiblePath(int power, int maxDetail);
 void drawPruferBackgroundPath(int power, int maxDetail);
