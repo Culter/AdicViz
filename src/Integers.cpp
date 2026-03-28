@@ -13,6 +13,7 @@
 #include "Comp.h"
 #include "Settings.h"
 #include "Integers.h"
+#include "Fractions.h"
 
 using namespace std;
 
@@ -55,6 +56,104 @@ void styleIntegers()
     cout << "    stroke-linejoin: round;\n";
     cout << "    stroke-width: 3px;\n";
     cout << "    paint-order: stroke fill;\n";
+    cout << "}\n";
+    
+    cout << ".smallLabelRight {\n";
+    cout << "    font-family: \"Noto Serif\", serif;\n";
+    cout << "    font-size: 14px;\n";
+
+    cout << "    text-anchor: start;\n";
+
+    cout << "    stroke: white;\n";
+    cout << "    stroke-linecap: round;\n";
+    cout << "    stroke-linejoin: round;\n";
+    cout << "    stroke-width: 1.5px;\n";
+    cout << "    paint-order: stroke fill;\n";
+    cout << "}\n";
+    
+    cout << ".smallLabelLeft {\n";
+    cout << "    font-family: \"Noto Serif\", serif;\n";
+    cout << "    font-size: 14px;\n";
+
+    cout << "    text-anchor: end;\n";
+
+    cout << "    stroke: white;\n";
+    cout << "    stroke-linecap: round;\n";
+    cout << "    stroke-linejoin: round;\n";
+    cout << "    stroke-width: 1.5px;\n";
+    cout << "    paint-order: stroke fill;\n";
+    cout << "}\n";
+}
+
+void styleMetric()
+{
+    cout << ".aa {\n";
+    if (g_events)
+    {
+        cout << "    pointer-events: fill;\n";
+        cout << "    cursor: crosshair;\n";
+    }
+    
+    cout << "    fill-opacity:" << g_integerBallOpacity << ";\n";
+    cout << "}\n";
+    
+    // for (int i = 0; i < g_maxExponentInteger; ++i)
+    // {
+    //     cout << ".aa" << i << " {\n";
+    //     cout << "}\n";
+    // }
+    
+    cout << ".aa0 {\n";
+    cout << "    fill: #7288cf;\n";
+    cout << "    stroke: #0a1855;\n";
+    cout << "    stroke-width: 3;\n";
+    cout << "    stroke-opacity: 1;\n";
+    cout << "}\n";
+    
+    cout << ".aa1 {\n";
+    cout << "    fill: #98b9d8;\n";
+    cout << "    stroke: #0a1855;\n";
+    cout << "    stroke-width: 1.5;\n";
+    cout << "    stroke-opacity: 1;\n";
+    cout << "}\n";
+    
+    cout << ".aa2 {\n";
+    cout << "    fill: #badfe4;\n";
+    cout << "    stroke: #0a1855;\n";
+    cout << "    stroke-width: 0.75;\n";
+    cout << "    stroke-opacity: 1;\n";
+    cout << "}\n";
+    
+    cout << ".a {\n";
+    
+    // cout << "    fill-opacity:" << g_integerBallOpacity << ";\n";
+    cout << "    stroke: #0a1855;\n";
+    cout << "    stroke-width: 0.375;\n";
+    cout << "    stroke-opacity: 1;\n";
+    cout << "    fill-opacity: 1;\n";
+    cout << "    fill: #eff8f7;\n";
+    // cout << "    stroke-width: 0;\n";
+
+    if (g_events)
+    {
+        cout << "    pointer-events: fill;\n";
+        cout << "    cursor: crosshair;\n";
+    }
+    cout << "}\n";
+    
+    cout << ".integerLabel {\n";
+    cout << "    font-family: \"Noto Serif\", serif;\n";
+    cout << "    font-size: 31px;\n";
+
+    cout << "    text-anchor: middle;\n";
+
+    cout << "    fill: black;\n";
+    cout << "    fill-opacity: 1;\n";
+    // cout << "    stroke: white;\n";
+    // cout << "    stroke-linecap: round;\n";
+    // cout << "    stroke-linejoin: round;\n";
+    cout << "    stroke-width: 0;\n";
+    // cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
     
     cout << ".smallLabelRight {\n";
@@ -140,8 +239,8 @@ void recursiveDraw(comp center, double offset, double scale, int value, int powe
         
         std::cout << "\n";
         
-        double stroke = 0.0;
-        double radius = stroke + scale / (1.0 - g_scale);
+        double stroke = g_integerBallStroke;
+        double radius = stroke + scale / (1.0 - g_scale) * g_integerBallOverflow;
         
         indent::space();
         std::cout << "<circle "
@@ -153,7 +252,7 @@ void recursiveDraw(comp center, double offset, double scale, int value, int powe
         << "/>\n";
         
         double newScale = scale * g_scale;
-        double newRadius = stroke + newScale / (1.0 - g_scale);
+        double newRadius = stroke + newScale / (1.0 - g_scale) * g_integerBallOverflow;
         
         bool fRecursive = (power + 1 < g_maxExponentInteger);
         
@@ -183,6 +282,22 @@ void recursiveDraw(comp center, double offset, double scale, int value, int powe
                 printAdicTitle(newValue, power + 1);
                 
                 std::cout << "</circle>\n";
+                
+                if (g_integerBallLabels) {
+                    double x = newCenter.getre();
+                    double y = newCenter.getim() + 10.5;
+
+                    auto balanced = (newValue > powi(prime, power + 1) / 2.0) ? (newValue - powi(prime, power + 1)) : newValue;
+
+                    std::cout << "<text x=\"" << x << "\" y=\"" << y << "\" class=\"integerLabel\" ";
+                    // printFillValue(0.0, 80);
+                    if (abs(balanced) >= 10) {
+                        std:cout << "letter-spacing=\"-2.5px\"";
+                    }
+                    std::cout << ">";
+                    std::cout << balanced;
+                    std::cout << "</text>\n";
+                }
             }
         }
     }

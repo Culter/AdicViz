@@ -91,6 +91,8 @@ void TwoAdicWithLabels() {
     g_events = false;
     g_maxExponentInteger = 8;
     g_maxExponentFraction = 6;
+    g_integerBallOpacity = 0.05;
+    g_integerBallOverflow = 1.0;
     g_scale = 1.0 / (1.0 + 1.0 / (sin(pi / prime)));
     
     cout << setprecision(6);
@@ -159,6 +161,8 @@ void ThreeAdicWithLabels() {
     g_events = false;
     g_maxExponentInteger = 8;
     g_maxExponentFraction = 6;
+    g_integerBallOpacity = 0.05;
+    g_integerBallOverflow = 1.0;
     g_scale = 1.0 / (1.0 + 1.0 / (sin(pi / prime)));
     
     cout << setprecision(6);
@@ -245,10 +249,54 @@ void ThreeAdicWithLabels() {
 	postamble();
 }
 
+void ThreeAdicMetric() {
+    ofstream outFile("3-adic metric on Z mod 27.svg");
+    cout.rdbuf(outFile.rdbuf());
+    
+    g_maxExponentInteger = 3;
+    g_maxExponentFraction = 3;
+    g_integerBallOpacity = 1.0;
+    g_integerBallOverflow = 1.08;
+    // g_integerBallStroke = 8;
+    g_integerBallLabels = true;
+    g_scale = 0.95 / (1.0 + 1.0 / (sin(pi / prime)));
+    
+    cout << setprecision(6);
+    
+    preamble(600, 600);
+    {
+        indent inSvg;
+        
+        beginDefs();
+        {
+            indent inDefs;
+            
+            beginStyle();
+            // styleIntegers();
+            styleMetric();
+            // stylePrufer();
+            // styleBars();
+            endStyle();
+            
+            definePrufer();
+        }
+        
+        endDefs();
+        
+        comp center(300, 300);
+        double integerScale = 270 * (1.0 - g_scale);
+        
+        drawIntegers(center, integerScale);
+    }
+    
+	postamble();
+}
+
 int main (int argc, const char * argv[])
 {
-    TwoAdicWithLabels();
+    // TwoAdicWithLabels();
     // ThreeAdicWithLabels();
+    ThreeAdicMetric();
 }
 
 

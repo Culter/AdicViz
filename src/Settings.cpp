@@ -14,3 +14,7 @@ bool g_events;
 double g_scale;
 int g_maxExponentInteger;
 int g_maxExponentFraction;
+double g_integerBallOpacity;
+double g_integerBallStroke;
+double g_integerBallOverflow;
+bool g_integerBallLabels;

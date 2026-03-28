@@ -10,6 +10,7 @@
 #define NewIll_Integers_h
 
 void styleIntegers();
+void styleMetric();
 void drawIntegers(comp center, double scale);
 
 void printAdicTitle(int value, int power);

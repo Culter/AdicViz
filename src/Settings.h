@@ -13,5 +13,9 @@ extern bool g_events;
 extern double g_scale;
 extern int g_maxExponentInteger;
 extern int g_maxExponentFraction;
+extern double g_integerBallOpacity;
+extern double g_integerBallStroke;
+extern double g_integerBallOverflow;
+extern bool g_integerBallLabels;
 
 #endif
