@@ -11,6 +11,7 @@
 
 void styleIntegers();
 void styleMetric();
+void styleCayley();
 void drawIntegers(comp center, double scale);
 
 void printAdicTitle(int value, int power);

@@ -155,31 +155,76 @@ void styleMetric()
     cout << "    stroke-width: 0;\n";
     // cout << "    paint-order: stroke fill;\n";
     cout << "}\n";
+}
+
+void styleCayley() {
+    cout << ".aa {\n";
+    if (g_events)
+    {
+        cout << "    pointer-events: fill;\n";
+        cout << "    cursor: crosshair;\n";
+    }
     
-    cout << ".smallLabelRight {\n";
-    cout << "    font-family: \"Noto Serif\", serif;\n";
-    cout << "    font-size: 14px;\n";
-
-    cout << "    text-anchor: start;\n";
-
-    cout << "    stroke: white;\n";
-    cout << "    stroke-linecap: round;\n";
-    cout << "    stroke-linejoin: round;\n";
-    cout << "    stroke-width: 1.5px;\n";
-    cout << "    paint-order: stroke fill;\n";
+    cout << "    fill-opacity: 0;\n";
+    cout << "    stroke-opacity: 0;\n";
     cout << "}\n";
     
-    cout << ".smallLabelLeft {\n";
+    // for (int i = 0; i < g_maxExponentInteger; ++i)
+    // {
+    //     cout << ".aa" << i << " {\n";
+    //     cout << "}\n";
+    // }
+    
+    cout << ".aa0 {\n";
+    cout << "}\n";
+    
+    cout << ".aa1 {\n";
+    cout << "}\n";
+    
+    cout << ".aa2 {\n";
+    cout << "}\n";
+    
+    cout << ".a {\n";
+    
+    // cout << "    fill-opacity: 0;\n";
+    // cout << "    stroke-opacity: 0;\n";
+
+    cout << "    stroke: #0a1855;\n";
+    cout << "    stroke-width: 1.2;\n";
+    cout << "    stroke-opacity: 1;\n";
+    cout << "    fill-opacity: 1;\n";
+    cout << "    fill: #f8f8f8;\n";
+
+    if (g_events)
+    {
+        cout << "    pointer-events: fill;\n";
+        cout << "    cursor: crosshair;\n";
+    }
+    cout << "}\n";
+    
+    cout << ".integerLabel {\n";
     cout << "    font-family: \"Noto Serif\", serif;\n";
-    cout << "    font-size: 14px;\n";
+    cout << "    font-size: 31px;\n";
 
-    cout << "    text-anchor: end;\n";
+    cout << "    text-anchor: middle;\n";
 
+    cout << "    fill: black;\n";
+    cout << "    fill-opacity: 1;\n";
     cout << "    stroke: white;\n";
     cout << "    stroke-linecap: round;\n";
     cout << "    stroke-linejoin: round;\n";
-    cout << "    stroke-width: 1.5px;\n";
+    cout << "    stroke-width: 0;\n";
     cout << "    paint-order: stroke fill;\n";
+    cout << "}\n";
+
+    cout << ".pathGen1 {\n";
+    cout << "    fill: none;\n";
+    cout << "    fill-opacity: 0;\n";
+    cout << "    stroke: black;\n";
+    // cout << "    stroke: linear-gradient(in hsl shorter hue, red, green, blue, red);\n";
+    cout << "    stroke-linecap: round;\n";
+    cout << "    stroke-linejoin: round;\n";
+    cout << "    stroke-width: 3;\n";
     cout << "}\n";
 }
 

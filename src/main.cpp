@@ -292,11 +292,79 @@ void ThreeAdicMetric() {
 	postamble();
 }
 
+comp getCayleyPoint(comp center, double scale, double value, int power)
+{
+    comp point = center;
+    for (int i = 1; i <= power; ++i)
+    {
+        point += circ(value / pow((double)prime, i)) * pow(g_scale, i-1) * scale;
+    }
+    
+    return point;
+}
+
+void ThreeAdicCayley() {
+    ofstream outFile("3-adic Cayley graph on Z mod 27.svg");
+    cout.rdbuf(outFile.rdbuf());
+    
+    g_maxExponentInteger = 3;
+    g_maxExponentFraction = 3;
+    g_integerBallOpacity = 1.0;
+    g_integerBallOverflow = 1.0;
+    // g_integerBallStroke = 8;
+    g_integerBallLabels = true;
+    g_scale = 1.0 / (1.0 + 1.0 / (sin(pi / prime)));
+    
+    cout << setprecision(6);
+    
+    preamble(600, 600);
+    {
+        indent inSvg;
+        
+        beginDefs();
+        {
+            indent inDefs;
+            
+            beginStyle();
+            // styleIntegers();
+            // styleMetric();
+            styleCayley();
+            // stylePrufer();
+            // styleBars();
+            endStyle();
+            
+            definePrufer();
+        }
+        
+        endDefs();
+        
+        comp center(300, 300);
+        double integerScale = 270 * (1.0 - g_scale);
+        
+        cout << "<path id=\"gen1\" class=\"pathGen1\" d=\"";
+        comp start = getCayleyPoint(center, integerScale, 0.0, g_maxExponentInteger);
+        cout << "M " << start.getre() << " " << start.getim();
+        double step = 0.02;
+        for (double x = step; x < 27.0 - step/2; x += step) {
+            comp point =  getCayleyPoint(center, integerScale, x, g_maxExponentInteger);
+            // TODO: Add cubic control points
+            cout << "L " << point.getre() << " " << point.getim();
+        }
+        cout << " Z";
+        cout << "\" />\n";
+        
+        drawIntegers(center, integerScale);
+    }
+    
+	postamble();
+}
+
 int main (int argc, const char * argv[])
 {
     // TwoAdicWithLabels();
     // ThreeAdicWithLabels();
-    ThreeAdicMetric();
+    // ThreeAdicMetric();
+    ThreeAdicCayley();
 }
 
 
