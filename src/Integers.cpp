@@ -124,12 +124,19 @@ void styleMetric()
     cout << "    stroke-opacity: 1;\n";
     cout << "}\n";
     
+    cout << ".aa3 {\n";
+    cout << "    fill: #eff8f7;\n";
+    cout << "    stroke: #0a1855;\n";
+    cout << "    stroke-width: 0.375;\n";
+    cout << "    stroke-opacity: 1;\n";
+    cout << "}\n";
+    
     cout << ".a {\n";
     
     // cout << "    fill-opacity:" << g_integerBallOpacity << ";\n";
-    cout << "    fill: #98b9d8;\n";
+    cout << "    fill: white;\n";
     cout << "    stroke: #0a1855;\n";
-    cout << "    stroke-width: 1.5;\n";
+    cout << "    stroke-width: 0.1875;\n";
     cout << "    stroke-opacity: 1;\n";
     cout << "    fill-opacity: 1;\n";
     // cout << "    stroke-width: 0;\n";
@@ -148,7 +155,7 @@ void styleMetric()
     
     cout << ".integerLabel {\n";
     cout << "    font-family: \"Noto Serif\", serif;\n";
-    cout << "    font-size: 94px;\n";
+    cout << "    font-size: 15px;\n";
 
     cout << "    text-anchor: middle;\n";
 
@@ -335,14 +342,14 @@ void recursiveDraw(comp center, double offset, double scale, int value, int powe
                 
                 if (g_integerBallLabels) {
                     double x = newCenter.getre();
-                    double y = newCenter.getim() + 10.5 * (94.0 / 31.0);
+                    double y = newCenter.getim() + 10.5 * (15.0 / 31.0);
 
                     auto balanced = (newValue > powi(prime, power + 1) / 2.0) ? (newValue - powi(prime, power + 1)) : newValue;
 
                     std::cout << "<text x=\"" << x << "\" y=\"" << y << "\" class=\"integerLabel\" ";
                     // printFillValue(0.0, 80);
                     if (abs(balanced) >= 10) {
-                        std:cout << "letter-spacing=\"-2.5px\"";
+                        std:cout << "letter-spacing=\"-1.2px\"";
                     }
                     std::cout << ">";
                     std::cout << balanced;
