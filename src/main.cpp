@@ -250,11 +250,11 @@ void ThreeAdicWithLabels() {
 }
 
 void ThreeAdicMetric() {
-    ofstream outFile("3-adic metric on Z mod 27.svg");
+    ofstream outFile("3-adic metric on Z mod 9.svg");
     cout.rdbuf(outFile.rdbuf());
     
-    g_maxExponentInteger = 3;
-    g_maxExponentFraction = 3;
+    g_maxExponentInteger = 2;
+    g_maxExponentFraction = 2;
     g_integerBallOpacity = 1.0;
     g_integerBallOverflow = 1.08;
     // g_integerBallStroke = 8;
@@ -363,8 +363,8 @@ int main (int argc, const char * argv[])
 {
     // TwoAdicWithLabels();
     // ThreeAdicWithLabels();
-    // ThreeAdicMetric();
-    ThreeAdicCayley();
+    ThreeAdicMetric();
+    // ThreeAdicCayley();
 }
 
 

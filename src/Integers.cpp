@@ -127,12 +127,17 @@ void styleMetric()
     cout << ".a {\n";
     
     // cout << "    fill-opacity:" << g_integerBallOpacity << ";\n";
+    cout << "    fill: #badfe4;\n";
     cout << "    stroke: #0a1855;\n";
-    cout << "    stroke-width: 0.375;\n";
+    cout << "    stroke-width: 0.75;\n";
     cout << "    stroke-opacity: 1;\n";
     cout << "    fill-opacity: 1;\n";
-    cout << "    fill: #eff8f7;\n";
     // cout << "    stroke-width: 0;\n";
+
+    // cout << "    stroke-width: 0.375;\n";
+    // cout << "    stroke-opacity: 1;\n";
+    // cout << "    fill-opacity: 1;\n";
+    // cout << "    fill: #eff8f7;\n";
 
     if (g_events)
     {
@@ -143,7 +148,7 @@ void styleMetric()
     
     cout << ".integerLabel {\n";
     cout << "    font-family: \"Noto Serif\", serif;\n";
-    cout << "    font-size: 31px;\n";
+    cout << "    font-size: 54px;\n";
 
     cout << "    text-anchor: middle;\n";
 
@@ -330,7 +335,7 @@ void recursiveDraw(comp center, double offset, double scale, int value, int powe
                 
                 if (g_integerBallLabels) {
                     double x = newCenter.getre();
-                    double y = newCenter.getim() + 10.5;
+                    double y = newCenter.getim() + 10.5 * (54.0 / 31.0);
 
                     auto balanced = (newValue > powi(prime, power + 1) / 2.0) ? (newValue - powi(prime, power + 1)) : newValue;
 
