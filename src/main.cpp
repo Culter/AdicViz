@@ -359,12 +359,81 @@ void ThreeAdicCayley() {
 	postamble();
 }
 
+void ThreeAdicPoster() {
+    ofstream outFile("3-adic poster.svg");
+    cout.rdbuf(outFile.rdbuf());
+    
+    g_events = false;
+    g_maxExponentInteger = 8;
+    g_maxExponentFraction = 6;
+    g_integerBallOpacity = 0.05;
+    g_integerBallOverflow = 1.0;
+    g_integerBallLabels = false;
+    g_scale = 1.0 / (1.0 + 1.0 / (sin(pi / prime)));
+    
+    cout << setprecision(6);
+    
+    preamble(600, 600);
+    {
+        indent inSvg;
+        
+        if (g_events)
+        {
+            beginScript();
+            insertScript();
+            endScript();
+        }
+        
+        beginDefs();
+        {
+            indent inDefs;
+            
+            beginStyle();
+            styleIntegers();
+            stylePrufer();
+            styleBars();
+            endStyle();
+            
+            definePrufer();
+        }
+        
+        endDefs();
+        
+        //drawIntegers(comp(200, 200), 180 * (1.0 - g_scale));
+        //drawPrufer(comp(600, 200), 180);
+        
+        double bothRadius = 50;
+        double bothScale = bothRadius * (1.0 - g_scale);
+        
+        {
+            comp center(100, 300);
+            drawIntegers(center, bothScale);
+        }
+        
+        {
+            comp center(240, 300);
+            int integerValue = 2;
+            drawPruferColored(center, bothRadius, integerValue, g_maxExponentFraction, false);
+        }
+        
+        {
+            comp center(500, 300);
+            int integerValue = 2;
+            drawPrufer(center, bothRadius);
+        }
+
+    }
+    
+	postamble();
+}
+
 int main (int argc, const char * argv[])
 {
     // TwoAdicWithLabels();
     // ThreeAdicWithLabels();
-    ThreeAdicMetric();
+    // ThreeAdicMetric();
     // ThreeAdicCayley();
+    ThreeAdicPoster();
 }
 
 
