@@ -315,8 +315,8 @@ void recursiveDraw(comp center, double offset, double scale, int value, int powe
         
         for (int d = 0; d < prime; ++d)
         {
-            double newOffset = (offset + d) / prime;
-//          double newOffset = ((double)d) / prime;
+            // double newOffset = (offset + d) / prime;
+            double newOffset = ((double)d) / prime;
             comp newCenter = center + circ (newOffset) * scale;
             
             int newValue = value + powi(prime, power) * d;

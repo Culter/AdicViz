@@ -364,7 +364,7 @@ void ThreeAdicPoster() {
     cout.rdbuf(outFile.rdbuf());
     
     g_events = false;
-    g_maxExponentInteger = 8;
+    g_maxExponentInteger = 7;
     g_maxExponentFraction = 6;
     g_integerBallOpacity = 0.05;
     g_integerBallOverflow = 1.0;
@@ -402,26 +402,14 @@ void ThreeAdicPoster() {
         //drawIntegers(comp(200, 200), 180 * (1.0 - g_scale));
         //drawPrufer(comp(600, 200), 180);
         
-        double bothRadius = 50;
+        double bothRadius = 200;
         double bothScale = bothRadius * (1.0 - g_scale);
         
         {
-            comp center(100, 300);
+            comp center(300, 300);
             drawIntegers(center, bothScale);
         }
         
-        {
-            comp center(240, 300);
-            int integerValue = 2;
-            drawPruferColored(center, bothRadius, integerValue, g_maxExponentFraction, false);
-        }
-        
-        {
-            comp center(500, 300);
-            int integerValue = 2;
-            drawPrufer(center, bothRadius);
-        }
-
     }
     
 	postamble();
