@@ -57,7 +57,8 @@ bazel run //src:adicviz
   * https://commons.wikimedia.org/wiki/File:3-adic_metric_on_Z_mod_27_blue.svg
   * https://commons.wikimedia.org/wiki/File:4adic_333.svg
 * Animation of the 3-adic solenoid:
-  * https://www.youtube.com/shorts/cJa1gcKEtCQ
+  * Looping 2-adic solenoid https://www.youtube.com/shorts/ybKYFWvUkX4
+  * Looping 3-adic solenoid https://www.youtube.com/shorts/cJa1gcKEtCQ
 * Also featured in: https://blogs.ams.org/visualinsight/2014/10/01/2-adic-integers/
 * Related StackExchange threads:
   * https://math.stackexchange.com/questions/583609/p-adic-numbers-and-group-characters
