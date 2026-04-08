@@ -1,5 +1,4 @@
-This repo shares some old hobby code of mine.
-The code produces SVGs with embedded scripting, which visualize side-by-side:
+This repo produces SVGs with embedded scripting, which visualize side-by-side:
 1. The compact group of [_p_-adic integers](https://en.wikipedia.org/wiki/P-adic_integer)
 2. The discrete [Prüfer _p_-group](https://en.wikipedia.org/wiki/Pr%C3%BCfer_group)
 
@@ -53,8 +52,16 @@ bazel run //src:adicviz
 * Images used in Wikipedia:
   * https://commons.wikimedia.org/wiki/File:2-adic_integers_with_dual_colorings.svg
   * https://commons.wikimedia.org/wiki/File:3-adic_integers_with_dual_colorings.svg
-* https://blogs.ams.org/visualinsight/2014/10/01/2-adic-integers/
+  * https://commons.wikimedia.org/wiki/File:2-adic_integers_with_labels.svg
+  * https://commons.wikimedia.org/wiki/File:3-adic_integers_with_labels.svg
+  * https://commons.wikimedia.org/wiki/File:3-adic_metric_on_Z_mod_27_blue.svg
+  * https://commons.wikimedia.org/wiki/File:4adic_333.svg
+* Animation of the 3-adic solenoid:
+  * https://www.youtube.com/shorts/cJa1gcKEtCQ
+* Also featured in: https://blogs.ams.org/visualinsight/2014/10/01/2-adic-integers/
 * Related StackExchange threads:
   * https://math.stackexchange.com/questions/583609/p-adic-numbers-and-group-characters
   * https://math.stackexchange.com/questions/2020194/if-h-subseteq-g-are-finite-abelian-groups-how-does-l2h-embed-into-l2
   * https://math.stackexchange.com/questions/2436717/visualizing-textbfq-p-vs-textbff-pt
+* Further resources, not by me:
+  * https://en.wikipedia.org/wiki/Solenoid_(mathematics)
