@@ -66,3 +66,8 @@ bazel run //src:adicviz
   * https://math.stackexchange.com/questions/2436717/visualizing-textbfq-p-vs-textbff-pt
 * Further resources, not by me:
   * https://en.wikipedia.org/wiki/Solenoid_(mathematics)
+
+### Poster
+Here's an image export of a poster presented at SFSU on 2026-04-08:
+
+![Visualizing p-adic numbers + Sturmian optimization](GradShowcase.png)
